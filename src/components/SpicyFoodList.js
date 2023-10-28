@@ -6,7 +6,8 @@ function SpicyFoodList() {
 
   const handleLiClick = (id) => {
     // Use a more descriptive variable name
-    const filteredFoodList = foods.filter((food) => food.id !== id);
+    const filteredFoodList = foods.filter((food) => food.id < id);
+    
     setFoods(filteredFoodList);
 };
 
@@ -14,7 +15,6 @@ function SpicyFoodList() {
 function handleAddFood() {
   const newFood = getNewRandomSpicyFood();
 
-  // Instead of directly mutating the state using setFoods(...),
   // create a new array and use the spread operator to copy the elements.
   const newFoodList = [...foods, newFood]; 
 
